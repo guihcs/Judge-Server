@@ -8,7 +8,7 @@
 
 <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.layouts.TeamsController">
     <HBox>
-        <Button mnemonicParsing="false" onAction="#showModal" text="Button" />
+        <Button mnemonicParsing="false" onAction="#showModal" text="Adicionar" />
     </HBox>
     <ListView fx:id="teamListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
 </VBox>

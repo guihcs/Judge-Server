@@ -17,7 +17,7 @@ public class AddJudgeModal extends Modal<Judge> {
     public AddJudgeModal(String title) {
         super(title);
         VBox vbox = new VBox(
-                new Label("Judge name:"),
+                new Label("Nome do Jurado:"),
                 judgeNameField,
                 nameFieldError
         );
@@ -42,6 +42,6 @@ public class AddJudgeModal extends Modal<Judge> {
 
     @Override
     protected void showError() {
-        if(!nameIsValid) nameFieldError.setText("Name can't be empty.");
+        if(!nameIsValid) nameFieldError.setText("O nome não pode ser vazio.");
     }
 }

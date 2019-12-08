@@ -25,8 +25,8 @@ public class Modal<T> {
         window = new Stage();
         window.setTitle(title);
 
-        submitButton = new Button("Submit");
-        cancelButton = new Button("Cancel");
+        submitButton = new Button("OK");
+        cancelButton = new Button("Cancelar");
 
         HBox buttonBar = new HBox(cancelButton, submitButton);
         buttonBar.setAlignment(Pos.CENTER_RIGHT);

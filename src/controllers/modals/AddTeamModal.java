@@ -16,7 +16,7 @@ public class AddTeamModal extends Modal<Team> {
     public AddTeamModal(String title) {
         super(title);
         VBox vbox = new VBox(
-                new Label("Team name:"),
+                new Label("Nome da Equipe:"),
                 teamNameField,
                 nameFieldError
         );
@@ -39,6 +39,6 @@ public class AddTeamModal extends Modal<Team> {
 
     @Override
     protected void showError() {
-        if(!nameIsValid) nameFieldError.setText("Name can't be empty.");
+        if(!nameIsValid) nameFieldError.setText("O nome não pode ser vazio.");
     }
 }

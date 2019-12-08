@@ -21,10 +21,10 @@ public class AddQuestionModal extends Modal<Question> {
     public AddQuestionModal(String title) {
         super(title);
         VBox vbox = new VBox(
-                new Label("Question name:"),
+                new Label("Nome do Critério:"),
                 nameField,
                 nameFieldError,
-                new Label("Question weight:"),
+                new Label("Peso do Critério:"),
                 weightField,
                 weightFieldError
         );
@@ -33,8 +33,7 @@ public class AddQuestionModal extends Modal<Question> {
 
         weightField.textProperty().addListener(c -> {
 
-            if (weightField.getText().isEmpty()) weightField.setText("1");
-            else if(!Validator.onlyNumber(weightField.getText())) {
+            if(!Validator.onlyNumber(weightField.getText())) {
                 weightField.setText(weightField.getText().replaceAll("\\D+", ""));
             }
         });
@@ -50,14 +49,14 @@ public class AddQuestionModal extends Modal<Question> {
     protected boolean validate() {
 
         nameIsValid = !(nameField.getText() == null || nameField.getText().isEmpty());
-        weightIsValid =  !(nameField.getText() == null || nameField.getText().isEmpty() || weightField.getText().matches("\\D+"));
+        weightIsValid =  !(weightField.getText() == null || weightField.getText().isEmpty() || !Validator.onlyNumber(weightField.getText()));
 
         return nameIsValid && weightIsValid;
     }
 
     @Override
     protected void showError() {
-        if(!nameIsValid) nameFieldError.setText("Name can't be empty.");
-        if(!weightIsValid) weightFieldError.setText("Weight only can be number.");
+        if(!nameIsValid) nameFieldError.setText("O nome não pode ser vazio.");
+        if(!weightIsValid) weightFieldError.setText("O peso deve ser um número");
     }
 }

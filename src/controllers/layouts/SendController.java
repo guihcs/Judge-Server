@@ -49,8 +49,8 @@ public class SendController {
         if(selectedTeam == null){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
-            alert.setTitle("No Team Selected");
-            alert.setHeaderText("Select a team to continue.");
+            alert.setTitle("Nenhuma Equipe Selecionada");
+            alert.setHeaderText("Selecione uma Equipe para continuar.");
 
             alert.showAndWait();
             return;

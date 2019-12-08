@@ -36,15 +36,19 @@ public class ResultController {
     private void refreshList(){
 
         TeamTotal winner = ResultManager.getInstance().getWinner();
-
-        titleLabel.setText(winner.getTeam().getName());
-        subtitleLabel.setText(String.valueOf(winner.getSum()));
-
         ObservableList<TeamTotal> totalList = FXCollections.observableArrayList(
                 ResultManager.getInstance().getTotals()
         );
 
-        totalList.remove(0);
+
+        if(winner != null) {
+            titleLabel.setText("Equipe vencedora: " +  winner.getTeam().getName());
+            subtitleLabel.setText("Pontuação: " + winner.getSum());
+            totalList.remove(0);
+        }else {
+            titleLabel.setText("");
+            subtitleLabel.setText("");
+        }
 
         //todo add accordion to show more info about result (show judge points, etc)
 

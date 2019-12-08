@@ -35,7 +35,7 @@ public class QuestionController {
     @FXML
     private void showModal(){
 
-        AddQuestionModal modal = new AddQuestionModal("Add Question");
+        AddQuestionModal modal = new AddQuestionModal("Adicionar Critério");
 
         modal.onData( data -> {
 
@@ -43,8 +43,8 @@ public class QuestionController {
                 Platform.runLater(() -> {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
-                    alert.setTitle("Question Already Exists");
-                    alert.setHeaderText("A question with this name already exists.");
+                    alert.setTitle("O Critério Já Existe");
+                    alert.setHeaderText("Um critério com esse nome já existe.");
                     alert.showAndWait();
                 });
 

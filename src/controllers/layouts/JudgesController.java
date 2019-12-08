@@ -34,15 +34,15 @@ public class JudgesController {
 
     @FXML
     private void showModal(){
-        AddJudgeModal modal = new AddJudgeModal("Add Judge");
+        AddJudgeModal modal = new AddJudgeModal("Adicionar Jurado");
 
         modal.onData( data -> {
             if (JudgeManager.getInstance().contains(data)) {
                 Platform.runLater(() -> {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
-                    alert.setTitle("Judge Already Exists");
-                    alert.setHeaderText("A judge with this name already exists.");
+                    alert.setTitle("Jurado Já Existe");
+                    alert.setHeaderText("Um Jurado com esse nome já existe.");
                     alert.showAndWait();
                 });
                 return;

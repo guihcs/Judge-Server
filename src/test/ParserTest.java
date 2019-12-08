@@ -38,9 +38,9 @@ public class ParserTest {
         JudgeManager.getInstance().add(judge);
 
         Result result = new Result(judge, team, List.of(
-                new QuestionResult("qwe", 5),
-                new QuestionResult("q", 6),
-                new QuestionResult("ew", 7)
+                new QuestionResult("qwe", 5, 1),
+                new QuestionResult("q", 6, 1),
+                new QuestionResult("ew", 7, 1)
         ));
 
 
