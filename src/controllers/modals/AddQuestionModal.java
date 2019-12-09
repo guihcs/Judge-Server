@@ -3,6 +3,7 @@ package controllers.modals;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import model.Question;
 import utils.Validator;
@@ -28,6 +29,13 @@ public class AddQuestionModal extends Modal<Question> {
                 weightField,
                 weightFieldError
         );
+
+        vbox.minWidth(300);
+
+        nameFieldError.getStyleClass().add("error-message");
+        weightFieldError.getStyleClass().add("error-message");
+
+        vbox.setSpacing(6);
 
         setContent(vbox);
 
@@ -57,6 +65,6 @@ public class AddQuestionModal extends Modal<Question> {
     @Override
     protected void showError() {
         if(!nameIsValid) nameFieldError.setText("O nome não pode ser vazio.");
-        if(!weightIsValid) weightFieldError.setText("O peso deve ser um número");
+        if(!weightIsValid) weightFieldError.setText("O peso deve ser um número.");
     }
 }

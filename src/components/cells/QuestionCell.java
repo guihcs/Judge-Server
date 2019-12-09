@@ -16,19 +16,20 @@ public class QuestionCell extends ListTile<Question> {
     private Label questionName = new Label();
     private Label questionWeight = new Label();
     private TextField questionOrder = new TextField();
-    private Button removeButton = new Button("remove");
+    private Button removeButton = new Button("remover");
     private Question data;
     private int currentIndex;
 
     private BiConsumer<Integer, Integer> indexChangedCallback;
 
     public QuestionCell() {
-        super();
-
+        super("../../resources/styles/question.css");
         setTitle(questionName);
         setSubtitle(questionWeight);
         setTrailing(questionOrder);
         setLeading(removeButton);
+
+        questionOrder.getStyleClass().add("order-field");
 
         questionOrder.setOnAction(e -> {
             if (validateIndex()) {

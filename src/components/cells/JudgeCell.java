@@ -15,7 +15,7 @@ public class JudgeCell extends ListTile<Judge> {
     private Label judgeName = new Label();
     private Label judgeCode = new Label();
     private RadioButton radioButton = new RadioButton();
-    private Button removeButton = new Button("remove");
+    private Button removeButton = new Button("remover");
     private Judge data;
 
     public JudgeCell() {

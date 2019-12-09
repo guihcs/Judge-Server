@@ -20,9 +20,16 @@ abstract class ListTile<T> extends ListCell<T> {
         try {
             root = loader.load();
             controller = loader.getController();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public ListTile(String stylePath){
+
+        this();
+        root.getStylesheets().add(getClass().getResource(stylePath).toExternalForm());
     }
 
 

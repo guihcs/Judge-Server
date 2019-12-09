@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 public class TeamCell extends ListTile<Team> {
 
     private Label teamName = new Label();
-    private Button removeButton = new Button("remove");
+    private Button removeButton = new Button("remover");
     private Team data;
 
     public TeamCell() {

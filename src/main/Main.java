@@ -20,7 +20,7 @@ public class Main extends Application {
         NetworkAdapter.getInstance();
 
         Parent root = FXMLLoader.load(getClass().getResource("../resources/layouts/main.fxml"));
-
+        root.getStylesheets().add(getClass().getResource("../resources/styles/main.css").toExternalForm());
         stage.setScene(new Scene(root));
 
         stage.setTitle("Judge");

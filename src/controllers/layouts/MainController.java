@@ -3,6 +3,7 @@ package controllers.layouts;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
@@ -16,12 +17,15 @@ import java.util.Map;
 public class MainController {
 
     @FXML
+    private Label contentLabel;
+    @FXML
     private ToggleGroup menu;
     @FXML
     private HBox rootContainer;
 
     private ToggleButton lastToggle;
     private Map<String, Parent> layoutMap = new HashMap<>();
+    private Map<String, String> styleMap = new HashMap<>();
 
     @FXML
     private void initialize(){
@@ -43,7 +47,7 @@ public class MainController {
         String selected = (String) selectedToggle.getUserData();
 
         selectedToggle.setDisable(true);
-
+        contentLabel.setText(selectedToggle.getText());
         rootContainer.getChildren().clear();
         Parent root = layoutMap.get(selected);
         HBox.setHgrow(root , Priority.ALWAYS);
@@ -59,6 +63,8 @@ public class MainController {
             layoutMap.put("teams", FXMLLoader.load(getClass().getResource("../../resources/layouts/teams.fxml")));
             layoutMap.put("judges", FXMLLoader.load(getClass().getResource("../../resources/layouts/judges.fxml")));
             layoutMap.put("result", FXMLLoader.load(getClass().getResource("../../resources/layouts/result.fxml")));
+
+            styleMap.put("question", getClass().getResource("../../resources/styles/question.css").toExternalForm());
         } catch (IOException e) {
             e.printStackTrace();
         }

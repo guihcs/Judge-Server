@@ -21,7 +21,7 @@ public class AddJudgeModal extends Modal<Judge> {
                 judgeNameField,
                 nameFieldError
         );
-
+        nameFieldError.getStyleClass().add("error-message");
         setContent(vbox);
     }
 

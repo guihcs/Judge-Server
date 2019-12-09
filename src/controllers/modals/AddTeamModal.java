@@ -20,7 +20,7 @@ public class AddTeamModal extends Modal<Team> {
                 teamNameField,
                 nameFieldError
         );
-
+        nameFieldError.getStyleClass().add("error-message");
         setContent(vbox);
     }
 

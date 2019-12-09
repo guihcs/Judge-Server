@@ -1,13 +1,16 @@
 package controllers.modals;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import main.Main;
 
 import java.util.function.Consumer;
 
@@ -24,11 +27,15 @@ public class Modal<T> {
     public Modal(String title){
         window = new Stage();
         window.setTitle(title);
-
+        layout.setPadding(new Insets(12));
+        layout.getStylesheets().add(Main.class.getResource("../resources/styles/main.css").toExternalForm());
+        layout.setPrefWidth(300);
         submitButton = new Button("OK");
         cancelButton = new Button("Cancelar");
 
         HBox buttonBar = new HBox(cancelButton, submitButton);
+        buttonBar.setPadding(new Insets(8, 0, 0, 0));
+        buttonBar.setSpacing(6);
         buttonBar.setAlignment(Pos.CENTER_RIGHT);
         layout.getChildren().add(buttonBar);
 

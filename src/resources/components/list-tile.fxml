@@ -4,32 +4,30 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox fx:controller="controllers.components.ListTileController" alignment="CENTER" maxWidth="1.7976931348623157E308"
-      minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1"
-      xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.components.ListTileController">
     <VBox alignment="CENTER">
         <HBox fx:id="trailing">
             <padding>
-                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0"/>
+                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
             </padding>
         </HBox>
     </VBox>
     <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
-        <HBox fx:id="title" alignment="CENTER_LEFT">
+        <HBox fx:id="title" alignment="CENTER_LEFT" styleClass="tile-title">
             <padding>
-                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0"/>
+                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
             </padding>
         </HBox>
-        <HBox fx:id="subtitle" alignment="CENTER_LEFT">
+        <HBox fx:id="subtitle" alignment="CENTER_LEFT" styleClass="tile-subtitle">
             <padding>
-                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0"/>
+                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
             </padding>
         </HBox>
     </VBox>
     <VBox alignment="CENTER">
         <HBox fx:id="leading" alignment="CENTER">
             <padding>
-                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0"/>
+                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
             </padding>
         </HBox>
     </VBox>

@@ -1,21 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.layouts.MainController">
-    <VBox minWidth="120.0">
-        <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="Envios" userData="send">
-            <toggleGroup>
-                <ToggleGroup fx:id="menu" />
-            </toggleGroup>
-        </ToggleButton>
-        <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Critérios" toggleGroup="$menu" userData="question" />
-        <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Equipes" toggleGroup="$menu" userData="teams" />
-        <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Jurados" toggleGroup="$menu" userData="judges" />
-        <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Resultado" toggleGroup="$menu" userData="result" />
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" styleClass="root" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.layouts.MainController">
+    <VBox maxWidth="160.0" minWidth="140.0" styleClass="nav-container" HBox.hgrow="SOMETIMES">
+      <HBox alignment="CENTER" minHeight="56.0" prefHeight="56.0">
+         <children>
+            <Label styleClass="title-label" text="Judge" />
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+              <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" styleClass="nav-button" text="Envios" userData="send" HBox.hgrow="ALWAYS">
+                  <toggleGroup>
+                      <ToggleGroup fx:id="menu" />
+                  </toggleGroup>
+              </ToggleButton>
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+              <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="nav-button" text="Critérios" toggleGroup="$menu" userData="question" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="nav-button" text="Equipes" toggleGroup="$menu" userData="teams" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="nav-button" text="Jurados" toggleGroup="$menu" userData="judges" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+              <ToggleButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="nav-button" text="Resultado" toggleGroup="$menu" userData="result" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
     </VBox>
-   <HBox fx:id="rootContainer" HBox.hgrow="ALWAYS" />
+   <VBox HBox.hgrow="ALWAYS">
+      <children>
+         <HBox alignment="CENTER_LEFT" minHeight="56.0" prefHeight="56.0" styleClass="app-bar">
+            <children>
+               <Label fx:id="contentLabel" styleClass="app-bar-label" text="Label" />
+            </children>
+         </HBox>
+         <HBox fx:id="rootContainer">
+            <padding>
+               <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+            </padding>
+         </HBox>
+      </children>
+   </VBox>
 </HBox>
