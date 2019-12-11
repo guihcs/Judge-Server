@@ -15,7 +15,7 @@ abstract class ListTile<T> extends ListCell<T> {
 
     public ListTile(){
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../resources/components/list-tile.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/resources/components/list-tile.fxml"));
 
         try {
             root = loader.load();

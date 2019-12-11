@@ -1,5 +1,6 @@
 package main;
 
+import database.Database;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,8 +20,8 @@ public class Main extends Application {
 
         NetworkAdapter.getInstance();
 
-        Parent root = FXMLLoader.load(getClass().getResource("../resources/layouts/main.fxml"));
-        root.getStylesheets().add(getClass().getResource("../resources/styles/main.css").toExternalForm());
+        Parent root = FXMLLoader.load(getClass().getResource("/resources/layouts/main.fxml"));
+        root.getStylesheets().add(getClass().getResource("/resources/styles/main.css").toExternalForm());
         stage.setScene(new Scene(root));
 
         stage.setTitle("Judge");
@@ -29,7 +30,6 @@ public class Main extends Application {
 
     @Override
     public void stop() throws Exception {
-
         super.stop();
 
         NetworkAdapter.getInstance().close();

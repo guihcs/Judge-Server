@@ -28,7 +28,7 @@ public class Modal<T> {
         window = new Stage();
         window.setTitle(title);
         layout.setPadding(new Insets(12));
-        layout.getStylesheets().add(Main.class.getResource("../resources/styles/main.css").toExternalForm());
+        layout.getStylesheets().add(Main.class.getResource("/resources/styles/main.css").toExternalForm());
         layout.setPrefWidth(300);
         submitButton = new Button("OK");
         cancelButton = new Button("Cancelar");

@@ -58,13 +58,13 @@ public class MainController {
     private void loadMap(){
         try {
 
-            layoutMap.put("send", FXMLLoader.load(getClass().getResource("../../resources/layouts/send.fxml")));
-            layoutMap.put("question", FXMLLoader.load(getClass().getResource("../../resources/layouts/question.fxml")));
-            layoutMap.put("teams", FXMLLoader.load(getClass().getResource("../../resources/layouts/teams.fxml")));
-            layoutMap.put("judges", FXMLLoader.load(getClass().getResource("../../resources/layouts/judges.fxml")));
-            layoutMap.put("result", FXMLLoader.load(getClass().getResource("../../resources/layouts/result.fxml")));
+            layoutMap.put("send", FXMLLoader.load(getClass().getResource("/resources/layouts/send.fxml")));
+            layoutMap.put("question", FXMLLoader.load(getClass().getResource("/resources/layouts/question.fxml")));
+            layoutMap.put("teams", FXMLLoader.load(getClass().getResource("/resources/layouts/teams.fxml")));
+            layoutMap.put("judges", FXMLLoader.load(getClass().getResource("/resources/layouts/judges.fxml")));
+            layoutMap.put("result", FXMLLoader.load(getClass().getResource("/resources/layouts/result.fxml")));
 
-            styleMap.put("question", getClass().getResource("../../resources/styles/question.css").toExternalForm());
+            styleMap.put("question", getClass().getResource("/resources/styles/question.css").toExternalForm());
         } catch (IOException e) {
             e.printStackTrace();
         }
