@@ -31,10 +31,12 @@ public class ResultManager {
 
         if (total == null){
             total = new TeamTotal(result.getTeam());
+            total.addResult(result);
             totals.add(total);
+        }else {
+            total.addResult(result);
         }
 
-        total.addResult(result);
         if(total.getResultList().size() >= JudgeManager.getInstance().getJudgeList().size()) {
             result.getTeam().setRated(true);
 
@@ -61,10 +63,4 @@ public class ResultManager {
         return totals;
     }
 
-    public TeamTotal getWinner(){
-        totals.sort(Comparator.comparingDouble(TeamTotal::getWeightedSum).reversed());
-
-
-        return null;
-    }
 }

@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.layouts.ResultController">
    <children>
-      <VBox>
+      <HBox>
          <children>
-            <Label fx:id="titleLabel" text="Label" />
-            <Label fx:id="subtitleLabel" text="Label" />
+            <VBox HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="titleLabel" text="Label" />
+                  <Label fx:id="subtitleLabel" text="Label" />
+               </children>
+            </VBox>
+            <Button mnemonicParsing="false" text="Desempate" />
          </children>
-      </VBox>
+      </HBox>
       <ListView fx:id="resultList" VBox.vgrow="ALWAYS" />
    </children>
 </VBox>

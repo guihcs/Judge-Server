@@ -56,7 +56,6 @@ public class DocumentParser {
                 Question question = QuestionManager.getInstance().get(name);
                 results.add(new QuestionResult(name, Double.parseDouble(value), question.getWeight()));
             }
-
             return new Result(judge, team, results);
         } catch (ParseException e) {
             e.printStackTrace();
@@ -73,7 +72,7 @@ public class DocumentParser {
 
     private static String buildQuestion(Question question){
 
-        return String.format("[%s,%s]", buildLabel(question.getTitle()), buildInput(question.getInputType()));
+        return String.format("[%s]", buildInput(question.getInputType(), question.getTitle()));
     }
 
     private static String buildLabel(String label){
@@ -81,8 +80,8 @@ public class DocumentParser {
         return String.format("{\"type\":\"label\",\"args\":{\"text\":\"%s\"}}", label);
     }
 
-    private static String buildInput(String type){
-        return String.format("{\"type\":\"input\",\"args\":{\"type\":\"%s\"}}", type);
+    private static String buildInput(String type, String label){
+        return String.format("{\"type\":\"input\",\"args\":{\"type\":\"%s\",\"label\":\"%s\"}}", type, label);
     }
 
     public static String buildJudge(Judge judge){

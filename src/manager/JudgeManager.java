@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import model.Judge;
 import network.NetworkOrigin;
 import network.NetworkAdapter;
+import utils.CodeGenerator;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -36,6 +37,8 @@ public class JudgeManager {
                 //todo add judge exit (set offline)
             }
         });
+
+
 
     }
 

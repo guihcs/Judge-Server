@@ -34,13 +34,13 @@ public class ResultController {
 
 
     private void refreshList(){
-
-        TeamTotal winner = ResultManager.getInstance().getWinner();
         ObservableList<TeamTotal> totalList = FXCollections.observableArrayList(
                 ResultManager.getInstance().getTotals()
         );
 
+        totalList.sort(Comparator.comparingDouble(TeamTotal::getSum).reversed());
 
+        TeamTotal winner = totalList.size() > 0 ? totalList.get(0) : null;
         if(winner != null) {
             titleLabel.setText("Equipe vencedora: " +  winner.getTeam().getName());
             subtitleLabel.setText("Pontuação: " + winner.getSum());

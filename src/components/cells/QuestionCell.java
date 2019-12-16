@@ -23,7 +23,7 @@ public class QuestionCell extends ListTile<Question> {
     private BiConsumer<Integer, Integer> indexChangedCallback;
 
     public QuestionCell() {
-        super("../../resources/styles/question.css");
+        super("/resources/styles/question.css");
         setTitle(questionName);
         setSubtitle(questionWeight);
         setTrailing(questionOrder);

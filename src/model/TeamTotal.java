@@ -5,7 +5,7 @@ import java.util.List;
 
 public class TeamTotal {
 
-    private List<Result> resultList = new ArrayList<>();
+    private final List<Result> resultList = new ArrayList<>();
     private Team team;
 
     public TeamTotal(Team team) {
@@ -13,7 +13,9 @@ public class TeamTotal {
     }
 
     public void addResult(Result result){
-        resultList.add(result);
+        synchronized (resultList) {
+            resultList.add(result);
+        }
     }
 
     public Team getTeam() {
@@ -43,7 +45,9 @@ public class TeamTotal {
     }
 
     public List<Result> getResultList() {
-        return resultList;
+        synchronized (resultList) {
+            return resultList;
+        }
     }
 
     @Override
