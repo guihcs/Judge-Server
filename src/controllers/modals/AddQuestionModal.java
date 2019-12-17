@@ -35,6 +35,9 @@ public class AddQuestionModal extends Modal<Question> {
         nameFieldError.getStyleClass().add("error-message");
         weightFieldError.getStyleClass().add("error-message");
 
+        nameField.setOnAction( e -> submit());
+        weightField.setOnAction(e -> submit());
+
         vbox.setSpacing(6);
 
         setContent(vbox);

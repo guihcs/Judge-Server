@@ -50,18 +50,18 @@ public class Modal<T> {
 
     public void onConfirm(Runnable runnable){
         onConfirm = runnable;
-        submitButton.setOnAction(e -> {
-            if(validate()) {
-                window.close();
-                if(onConfirm != null) runnable.run();
-                if (consumer != null) consumer.accept(getData());
-            }else {
-                showError();
-            }
-
-        });
+        submitButton.setOnAction(e -> submit());
+    }
 
 
+    protected void submit(){
+        if(validate()) {
+            window.close();
+            if(onConfirm != null) onConfirm.run();
+            if (consumer != null) consumer.accept(getData());
+        }else {
+            showError();
+        }
     }
 
     public void onCancel(Runnable runnable){

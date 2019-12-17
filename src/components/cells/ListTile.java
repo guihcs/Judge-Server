@@ -30,6 +30,7 @@ abstract class ListTile<T> extends ListCell<T> {
 
         this();
         root.getStylesheets().add(getClass().getResource(stylePath).toExternalForm());
+
     }
 
 

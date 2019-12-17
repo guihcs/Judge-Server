@@ -32,6 +32,7 @@ public class SendController {
         teamListView.setCellFactory( c -> {
             SendCell sendCell = new SendCell();
             sendCell.onSelect( (team, cell) -> {
+                if(lastCell != null && lastCell.equals(cell)) lastCell = null;
                 if(lastCell != null) lastCell.clear();
                 lastCell = cell;
 
