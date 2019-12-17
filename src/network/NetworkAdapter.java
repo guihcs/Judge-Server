@@ -131,5 +131,10 @@ public class NetworkAdapter {
     }
 
 
+    public void setCode(String code, String address){
+        //todo set code to connection so when a judge is removed the connection will be closed
+    }
+
+
 
 }

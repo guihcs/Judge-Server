@@ -16,7 +16,7 @@
                   <Label fx:id="subtitleLabel" text="Label" />
                </children>
             </VBox>
-            <Button mnemonicParsing="false" text="Desempate" />
+            <Button mnemonicParsing="false" text="Desempate" styleClass="material-button" onAction="#solveDraw"/>
          </children>
       </HBox>
       <ListView fx:id="resultList" VBox.vgrow="ALWAYS" />

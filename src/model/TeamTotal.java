@@ -53,9 +53,10 @@ public class TeamTotal implements Serializable {
 
     @Override
     public String toString() {
-        return "TeamTotal{" +
-                "resultList=" + resultList +
-                ", team=" + team +
-                '}';
+        return String.format("""
+                Total:
+                Equipe: %s
+                Soma: %.2f
+                Soma com pesos: %.2f""", team.getName(), getSum(), getWeightedSum());
     }
 }
