@@ -2,9 +2,13 @@ package manager;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import model.Judge;
 import model.Question;
 
-public class QuestionManager {
+import java.io.Serializable;
+import java.util.List;
+
+public class QuestionManager implements Serializable {
 
     private static QuestionManager instance;
 
@@ -45,6 +49,10 @@ public class QuestionManager {
 
     public ObservableList<Question> getQuestionList() {
         return questionList;
+    }
+
+    public void setQuestionList(List<Question> questionList){
+        this.questionList = FXCollections.observableArrayList(questionList);
     }
 
     public boolean contains(Question question){

@@ -1,7 +1,6 @@
 package manager;
 
 import builder.DocumentParser;
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,9 +8,10 @@ import model.*;
 import network.NetworkOrigin;
 import network.NetworkAdapter;
 
-import java.util.Comparator;
+import java.io.Serializable;
+import java.util.List;
 
-public class ResultManager {
+public class ResultManager implements Serializable {
 
     private static ResultManager instance;
     private ObservableList<TeamTotal> totals = FXCollections.observableArrayList();
@@ -19,7 +19,7 @@ public class ResultManager {
     private ResultManager() {
         NetworkAdapter.getInstance().onData(message -> {
             if(message.getOrigin() == NetworkOrigin.SOCKET){
-                Result result = DocumentParser.buildResult(message.getData());
+                Result result = DocumentParser.parseResult(message.getData());
                 handleResult(result);
             }
         });
@@ -61,6 +61,10 @@ public class ResultManager {
 
     public ObservableList<TeamTotal> getTotals() {
         return totals;
+    }
+
+    public void setResultList(List<TeamTotal> resultList){
+        totals = FXCollections.observableArrayList(resultList);
     }
 
 }

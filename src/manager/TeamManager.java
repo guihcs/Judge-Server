@@ -2,10 +2,14 @@ package manager;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import model.Judge;
 import model.Question;
 import model.Team;
 
-public class TeamManager {
+import java.io.Serializable;
+import java.util.List;
+
+public class TeamManager implements Serializable {
 
     private static TeamManager instance;
 
@@ -32,6 +36,10 @@ public class TeamManager {
 
     public ObservableList<Team> getTeamList() {
         return teamList;
+    }
+
+    public void setTeamList(List<Team> teamList){
+        this.teamList = FXCollections.observableArrayList(teamList);
     }
 
     public Team get(String key){

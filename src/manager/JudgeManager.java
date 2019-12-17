@@ -8,10 +8,12 @@ import network.NetworkOrigin;
 import network.NetworkAdapter;
 import utils.CodeGenerator;
 
+import java.io.Serializable;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-public class JudgeManager {
+public class JudgeManager implements Serializable {
 
     private static JudgeManager instance;
 
@@ -58,6 +60,10 @@ public class JudgeManager {
 
     public ObservableList<Judge> getJudgeList() {
         return judgeList;
+    }
+
+    public void setJudgeList(List<Judge> judgeList){
+        this.judgeList = FXCollections.observableArrayList(judgeList);
     }
 
     public Judge get(String key){

@@ -45,7 +45,7 @@ public class ParserTest {
 
 
 
-        Result parsedResult = DocumentParser.buildResult(doc);
+        Result parsedResult = DocumentParser.parseResult(doc);
 
         assertEquals(result.getJudge().getCode(), parsedResult.getJudge().getCode());
         assertEquals(result.getTeam().getName(), parsedResult.getTeam().getName());
@@ -62,4 +62,42 @@ public class ParserTest {
         assertEquals(18, total.getSum());
 
     }
+
+
+
+    @Test
+    public void testJudgesBuild(){
+
+    }
+
+    @Test
+    public void testQuestionsBuild(){
+
+    }
+
+    @Test
+    public void testResultsBuild(){
+
+    }
+
+    @Test
+    public void testTeamsParsing(){
+
+    }
+
+    @Test
+    public void testJudgesParsing(){
+
+    }
+
+    @Test
+    public void testQuestionsParsing(){
+
+    }
+
+    @Test
+    public void testResultsParsing(){
+
+    }
+
 }

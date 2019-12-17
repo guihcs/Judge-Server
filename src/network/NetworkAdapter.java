@@ -26,8 +26,13 @@ public class NetworkAdapter {
             datagramSocket.joinGroup(InetAddress.getByName("233.233.233.233"));
             datagramSocket.setSoTimeout(5000);
             isReceivingMulticast = true;
-            new Thread(this::listenMulticast).start();
+
+            Thread datagramListener = new Thread(this::listenMulticast);
+            datagramListener.setDaemon(true);
+            datagramListener.start();
+
             socketListener = new Thread(this::listenSocket);
+            socketListener.setDaemon(true);
         } catch (IOException e) {
             e.printStackTrace();
         }
